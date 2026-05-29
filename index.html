@@ -1,6 +1,7 @@
 ﻿<!doctype html>
 <html lang="en">
   <head>
+    <script>(function(){if(localStorage.getItem("theme")!=="light"){document.documentElement.classList.add("dark");}}());</script>
     <!-- Meta Tags -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -996,7 +997,9 @@
 
       .dark #contact input,
       .dark #contact textarea {
-        background: rgb(15 23 42 / 0.72);
+        background: rgb(255 255 255 / 0.06);
+        border-color: rgba(148, 163, 184, 0.4);
+        color: rgb(226 232 240);
       }
 
       #contact input:focus,
@@ -2156,7 +2159,7 @@
         <!-- Experience Section -->
         <section id="experience" class="pt-0 pb-24 reveal">
           <div
-            class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-12">
+            class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-12">
             <div class="glass-card rounded-3xl p-5">
               <p
                 class="text-sm uppercase tracking-[0.4em] text-slate-500 dark:text-slate-400 mb-3">
@@ -2164,12 +2167,12 @@
               </p>
               <h2
                 class="font-display text-3xl md:text-4xl font-bold text-slate-950 dark:text-white">
-                A senior timeline with active scroll storytelling
+                A timeline of My Work Experience
               </h2>
             </div>
             <p class="max-w-2xl text-slate-600 dark:text-slate-400">
-              The experience rail fills as you move through the section, then
-              stops cleanly before the next section begins.
+              8+ years of experience building scalable digital products, solving
+              complex problems, and delivering measurable business results
             </p>
           </div>
           <div class="relative timeline-track" data-timeline>
@@ -2379,7 +2382,7 @@
         <!-- Skills Section -->
         <section id="skills" class="py-24 reveal section-shell">
           <div
-            class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-12 px-2 sm:px-4">
+            class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-12 px-2 sm:px-4">
             <div class="glass-card rounded-3xl p-5 max-w-2xl">
               <p
                 class="text-sm uppercase tracking-[0.4em] text-slate-500 dark:text-slate-400 mb-3">
@@ -2391,8 +2394,9 @@
               </h2>
             </div>
             <p class="max-w-2xl text-slate-600 dark:text-slate-400 px-1">
-              A glassmorphism-first stack presentation with layered motion,
-              interactive chips, and a clear product engineering focus.
+              A full-stack engineering toolkit spanning modern frontend
+              development, scalable backend systems, cloud infrastructure,
+              databases, and AI-powered workflows.
             </p>
           </div>
           <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3 px-2 sm:px-4">
@@ -3003,7 +3007,7 @@
         <!-- Education & More Section -->
         <section id="education" class="py-24 reveal section-shell">
           <div
-            class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-12 px-2 sm:px-4">
+            class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-12 px-2 sm:px-4">
             <div class="glass-card rounded-3xl p-5 max-w-2xl">
               <p
                 class="text-sm uppercase tracking-[0.4em] text-slate-500 dark:text-slate-400 mb-3">
@@ -3015,8 +3019,8 @@
               </h2>
             </div>
             <p class="max-w-2xl text-slate-600 dark:text-slate-400 px-1">
-              Education and supporting profile details are grouped with the same
-              glassmorphism rhythm used throughout the page.
+              Academic background, certifications, and professional highlights
+              that have shaped my technical expertise and career growth.
             </p>
           </div>
           <div class="grid gap-8 md:grid-cols-2 px-2 sm:px-4">
@@ -3365,14 +3369,10 @@
         // --- THEME TOGGLE ---
         const themeToggleBtn = document.getElementById("theme-toggle");
 
-        if (
-          localStorage.getItem("theme") === "dark" ||
-          (!("theme" in localStorage) &&
-            window.matchMedia("(prefers-color-scheme: dark)").matches)
-        ) {
-          htmlEl.classList.add("dark");
-        } else {
+        if (localStorage.getItem("theme") === "light") {
           htmlEl.classList.remove("dark");
+        } else {
+          htmlEl.classList.add("dark");
         }
 
         themeToggleBtn.setAttribute(
